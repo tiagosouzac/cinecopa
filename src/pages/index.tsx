@@ -1,9 +1,3 @@
-import { styled } from "../styles"
-
 export default function Home() {
-  return <Title>Hello World</Title>
+  return
 }
-
-const Title = styled("h1", {
-  color: "red",
-})
