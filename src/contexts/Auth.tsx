@@ -50,6 +50,7 @@ export const AuthProvider = ({ children }: ProviderProps) => {
           name: user.displayName as string,
           email: user.email as string,
           cards: [],
+          packages: 0,
         };
 
         await setDoc(doc(db, "users", user.uid), newUser);
