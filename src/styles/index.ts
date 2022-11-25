@@ -1,9 +1,19 @@
-import { createStitches } from "@stitches/react";
-import { createGlobalStyle } from "styled-components";
+import { createStitches } from "@stitches/react"
+import { createGlobalStyle } from "styled-components"
 
-export const { config, theme, createTheme, styled, css, globalCss, keyframes, getCssText } = createStitches({
+export const {
+  config,
+  theme,
+  createTheme,
+  styled,
+  css,
+  globalCss,
+  keyframes,
+  getCssText,
+} = createStitches({
   theme: {
     colors: {
+      white: "#ffffff",
       gray500: "#222222",
       gray400: "#474747",
       gray300: "#909090",
@@ -43,7 +53,7 @@ export const { config, theme, createTheme, styled, css, globalCss, keyframes, ge
       xl: "1.5rem", // 24px
     },
   },
-});
+})
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -99,6 +109,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-`;
+`
 
-export { GlobalStyle };
+export { GlobalStyle }
