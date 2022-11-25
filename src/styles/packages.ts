@@ -20,6 +20,13 @@ export const BackLink = styled(Link, {
   gap: 8,
 })
 
+export const EmptyMessage = styled("p", {
+  marginTop: 40,
+  color: "$white",
+  fontSize: 20,
+  textAlign: "center",
+})
+
 export const Cards = styled("div", {
   marginTop: 80,
 })

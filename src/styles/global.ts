@@ -1,4 +1,4 @@
-import { globalCss } from ".";
+import { globalCss } from "."
 
 export const globalStyle = globalCss({
   html: {
@@ -8,6 +8,7 @@ export const globalStyle = globalCss({
     padding: 0,
     margin: 0,
     boxSizing: "border-box",
+    fontFamily: "$roboto",
   },
   body: {
     height: "100%",
@@ -19,4 +20,4 @@ export const globalStyle = globalCss({
   "#__next": {
     height: "100%",
   },
-});
+})

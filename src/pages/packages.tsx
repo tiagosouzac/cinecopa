@@ -5,6 +5,7 @@ import {
   BackLink,
   Cards,
   Container,
+  EmptyMessage,
   OpenPackage,
   ReceivedCards,
 } from "../styles/packages"
@@ -16,7 +17,7 @@ import { db } from "../config/firebase"
 import { useAuth } from "../contexts/Auth"
 
 export default function Packages() {
-  const { user } = useAuth()
+  const { user, setUser } = useAuth()
   const [isPackageOpen, setIsPackageOpen] = useReducer((state) => !state, false)
   const [receivedCards, setReceivedCards] = useState<Array<typeof cards[0]>>([])
 
@@ -30,10 +31,32 @@ export default function Packages() {
 
     await updateDoc(doc(db, "users", user.id), {
       cards: arrayUnion(...obtainedCards),
+      package: user.package - 1,
     })
 
     setReceivedCards(obtainedCards)
+    setUser({
+      ...user,
+      package: user.package - 1,
+    })
     setIsPackageOpen()
+  }
+
+  if (!user.package && !isPackageOpen) {
+    return (
+      <Container>
+        <Header />
+
+        <BackLink href="/">
+          <Image src={arrowIcon} alt="" width={20} height={20} />
+          Voltar para home
+        </BackLink>
+
+        <EmptyMessage>
+          Você não tem pacotes de figurinhas para abrir
+        </EmptyMessage>
+      </Container>
+    )
   }
 
   return (

@@ -8,6 +8,15 @@ export const ContainerHome = styled.section`
   justify-content: center;
   align-items: center;
 
+  .home-right {
+    position: relative;
+    .winPackage {
+      position: absolute;
+      top: 0px;
+      right: 90%;
+    }
+  }
+
   .backgrouund {
     position: absolute;
     top: 0px;

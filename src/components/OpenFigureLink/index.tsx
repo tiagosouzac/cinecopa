@@ -8,7 +8,7 @@ import PackageImage from "../../assets/images/Pacotinho.png"
 const OpenFigureLink = () => {
   const { user } = useAuth()
 
-  const packageCards = user?.package
+  const packageCards = user?.package || 0
 
   return (
     <Link href="/packages">
