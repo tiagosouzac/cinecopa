@@ -31,6 +31,10 @@ export const Container = styled("div", {
   isolation: "isolate",
   height: "100%",
 
+  ".google-logo": {
+    marginRight: "8px",
+  },
+
   "& >  img.background": {
     position: "absolute",
     top: "0px",

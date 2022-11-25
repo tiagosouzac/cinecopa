@@ -2,13 +2,23 @@ import Input from "../components/Input";
 import { Container, Form, Info, Title } from "../styles/login";
 import loginBackground from "../assets/images/login-background.png";
 import AlbumMock from "../assets/images/Mockup-Album.png";
+import googleLogo from "../assets/images/_Google.png";
 import Image from "next/image";
 import Button from "../components/Button";
 import { useAuth } from "../contexts/Auth";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Login() {
   const { handleLoginWithGoogle, user } = useAuth();
+  const { replace } = useRouter();
+
+  useEffect(() => {
+    if (user.email) {
+      console.log(user);
+      replace("/");
+    }
+  }, [user]);
 
   // useEffect(() => {if}, []);
 
@@ -31,6 +41,11 @@ export default function Login() {
             variant="google"
             type="button"
           >
+            <Image
+              className="google-logo"
+              src={googleLogo}
+              alt={"Google logo"}
+            ></Image>
             Entre usando o Google
           </Button>
 
