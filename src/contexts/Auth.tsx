@@ -1,13 +1,5 @@
 import { signInWithPopup } from "firebase/auth"
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  query,
-  setDoc,
-  where,
-} from "firebase/firestore"
+import { doc, getDoc, setDoc } from "firebase/firestore"
 import { useRouter } from "next/router"
 import {
   createContext,
@@ -19,8 +11,11 @@ import {
 import { auth, db, googleProvider } from "../config/firebase"
 
 type User = {
+  id: string
   name: string
   email: string
+  avatarUrl: string
+  cards: any[]
 }
 
 type ContextProps = {
@@ -47,8 +42,10 @@ export const AuthProvider = ({ children }: ProviderProps) => {
 
       if (!docSnap.exists()) {
         const newUser = {
+          id: user.uid,
           name: user.displayName as string,
           email: user.email as string,
+          avatarUrl: user.photoURL as string,
           cards: [],
         }
 
@@ -57,7 +54,7 @@ export const AuthProvider = ({ children }: ProviderProps) => {
         return replace("/")
       }
 
-      setUser(docSnap.data())
+      setUser(docSnap.data() as User)
       pathname === "/login" && replace("/")
     })
   }, [])
