@@ -14,38 +14,24 @@ export default function Login() {
   const { replace } = useRouter();
 
   useEffect(() => {
-    if (user.email) {
+    if (user?.email) {
       console.log(user);
       replace("/");
     }
   }, [user]);
 
-  // useEffect(() => {if}, []);
-
   return (
     <>
       <Container>
-        <Image
-          className="background"
-          src={loginBackground}
-          alt={"login background"}
-        ></Image>
+        <Image className="background" src={loginBackground} alt={"login background"}></Image>
         <Image src={AlbumMock} alt={"login background"}></Image>
 
         <Form>
           <Title>Boas vindas!</Title>
           <Info>Faça o login para acessar seu álbum:</Info>
 
-          <Button
-            onClick={handleLoginWithGoogle}
-            variant="google"
-            type="button"
-          >
-            <Image
-              className="google-logo"
-              src={googleLogo}
-              alt={"Google logo"}
-            ></Image>
+          <Button onClick={handleLoginWithGoogle} variant="google" type="button">
+            <Image className="google-logo" src={googleLogo} alt={"Google logo"}></Image>
             Entre usando o Google
           </Button>
 
