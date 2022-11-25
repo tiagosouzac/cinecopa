@@ -9,6 +9,15 @@ export const Form = styled("form", {
   padding: "32px",
   boxSizing: "border-box",
 
+  p: {
+    fontFamily: "$roboto",
+    fontWeight: "400",
+    marginTop: "16px",
+    marginBottom: "15px",
+    fontSize: "16px",
+    textAlign: "center",
+  },
+
   [`${InputController} `]: {
     marginBottom: "30px",
   },
@@ -21,6 +30,7 @@ export const Container = styled("div", {
   gap: "58px",
   isolation: "isolate",
   height: "100%",
+
   "& >  img.background": {
     position: "absolute",
     top: "0px",

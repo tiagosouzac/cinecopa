@@ -4,8 +4,14 @@ import loginBackground from "../assets/images/login-background.png";
 import AlbumMock from "../assets/images/Mockup-Album.png";
 import Image from "next/image";
 import Button from "../components/Button";
+import { useAuth } from "../contexts/Auth";
+import { useEffect } from "react";
 
 export default function Login() {
+  const { handleLoginWithGoogle, user } = useAuth();
+
+  // useEffect(() => {if}, []);
+
   return (
     <>
       <Container>
@@ -19,6 +25,16 @@ export default function Login() {
         <Form>
           <Title>Boas vindas!</Title>
           <Info>Faça o login para acessar seu álbum:</Info>
+
+          <Button
+            onClick={handleLoginWithGoogle}
+            variant="google"
+            type="button"
+          >
+            Entre usando o Google
+          </Button>
+
+          <p>OU</p>
 
           <Input
             type="name"
@@ -42,7 +58,9 @@ export default function Login() {
             label="Senha"
           />
 
-          <Button variant="primary" type="submit" text="Entrar" />
+          <Button variant="primary" type="submit">
+            Entrar
+          </Button>
         </Form>
       </Container>
     </>

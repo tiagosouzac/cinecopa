@@ -26,6 +26,16 @@ export const Button = styled("button", {
           background: "#5D050C",
         },
       },
+
+      google: {
+        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.15)",
+        background: "#FFF",
+        color: "#222222",
+        border: "1px solid #EDEDED",
+        "&:hover": {
+          background: "#EDEDED",
+        },
+      },
     },
   },
 });
