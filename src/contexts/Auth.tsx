@@ -1,7 +1,7 @@
 import { signInWithPopup } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
 import { auth, db, googleProvider } from "../config/firebase";
 
 type User = {
@@ -16,6 +16,7 @@ type User = {
 type ContextProps = {
   user: User;
   handleLoginWithGoogle: () => void;
+  setUser: Dispatch<SetStateAction<User>>;
 };
 
 type ProviderProps = {
@@ -57,7 +58,9 @@ export const AuthProvider = ({ children }: ProviderProps) => {
 
   const handleLoginWithGoogle = async () => await signInWithPopup(auth, googleProvider);
 
-  return <AuthContext.Provider value={{ user, handleLoginWithGoogle }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ user, handleLoginWithGoogle, setUser }}>{children}</AuthContext.Provider>
+  );
 };
 
 export const useAuth = () => {

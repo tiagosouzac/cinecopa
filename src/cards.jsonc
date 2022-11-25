@@ -1,0 +1,49 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "name": "Fernanda Montenegro",
+      "probability": 2,
+      "country": "Brasil",
+      "file": "https://firebasestorage.googleapis.com/v0/b/cinecopa-d38d5.appspot.com/o/Figurinha-Fernanda%20Montenegro.png?alt=media&token=2b6c7f29-2697-4edc-920a-bae62292fb5a"
+    },
+    {
+      "id": "2",
+      "name": "Rodrigo Santoro",
+      "probability": 1,
+      "country": "Brasil",
+      "file": "https://firebasestorage.googleapis.com/v0/b/cinecopa-d38d5.appspot.com/o/Figurinha-Rodrigo%20Santoro.png?alt=media&token=5c74c034-20ed-41af-8729-3f706dd3b23b"
+    },
+    {
+      "id": "3",
+      "name": "Sônia Braga",
+      "probability": 2,
+      "country": "Brasil",
+      "file": "https://firebasestorage.googleapis.com/v0/b/cinecopa-d38d5.appspot.com/o/Figurinha-S%C3%B4nia%20Braga.png?alt=media&token=a2eed5fc-ff90-40e1-a96a-d6a6417163b0"
+    },
+
+    {
+      "id": "4",
+      "name": "Bruna marquezine",
+      "probability": 1,
+      "country": "Brasil",
+      "file": "https://firebasestorage.googleapis.com/v0/b/cinecopa-d38d5.appspot.com/o/Figurinha-Bruna%20marquezine.png?alt=media&token=eec1b195-5dcc-4677-a3fd-1f7188f12abc"
+    },
+
+    {
+      "id": "5",
+      "name": "Maria Fernanda Cândido",
+      "probability": 1,
+      "country": "Brasil",
+      "file": "https://firebasestorage.googleapis.com/v0/b/cinecopa-d38d5.appspot.com/o/Figurinha-Maria%20Fernanda%20C%C3%A2ndido.png?alt=media&token=1df84fb8-3196-40bc-aa48-2af8cc2ee990"
+    },
+
+    {
+      "id": "6",
+      "name": "Wagner moura",
+      "probability": 2,
+      "country": "Brasil",
+      "file": "https://firebasestorage.googleapis.com/v0/b/cinecopa-d38d5.appspot.com/o/Figurinha-Wagner-Moura.png?alt=media&token=5ad8a188-2938-47be-af06-db9c13804fad"
+    }
+  ]
+}
